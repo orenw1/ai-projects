@@ -6,9 +6,10 @@
   "scripts": {
     "agent": "tsx src/agent.ts",
     "start": "node dist/agent.js",
-    "build": "tsc",
+    "build": "tsc -p tsconfig.build.json",
     "typecheck": "tsc --noEmit",
-    "dev": "tsx src/agent.ts"
+    "dev": "tsx src/agent.ts",
+    "test": "tsx --test test/*.test.ts"
   },
   "engines": {
     "node": ">=18"

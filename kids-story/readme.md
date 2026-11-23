@@ -49,6 +49,16 @@ npm run dev -- --system "You are a silly pirate storyteller for toddlers." "trea
 
 Or set `SYSTEM_PROMPT` in `.env` for all runs.
 
+## Test
+
+Tests use Node's built-in test runner (via `tsx`), so there is nothing extra to install. They don't call the API and need no `.env` file.
+
+```bash
+npm test
+```
+
+They live in `test/story.test.ts` and cover argument parsing, subject validation and extracting the story from the agent's reply.
+
 ## Environment
 
 | Variable | Description |
@@ -78,7 +88,7 @@ flowchart LR
 
 | Concept | Where to look in `src/agent.ts` |
 | --- | --- |
-| System prompt: rules for every run | `DEFAULT_SYSTEM_PROMPT` |
+| System prompt: rules for every run | `DEFAULT_SYSTEM_PROMPT` in `src/story.ts` |
 | User prompt: this run's request | `userPrompt` in `main()` |
-| Validation before spending tokens | `validateSubject()` |
-| Reading the answer from the conversation | `getStoryText()` |
+| Validation before spending tokens | `validateSubject()` in `src/story.ts` |
+| Reading the answer from the conversation | `getStoryText()` in `src/story.ts` |
