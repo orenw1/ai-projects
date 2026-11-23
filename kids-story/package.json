@@ -1,0 +1,28 @@
+{
+  "name": "kids-story",
+  "version": "1.0.0",
+  "description": "LangChain agent that writes short happy kids stories via OpenRouter",
+  "type": "module",
+  "scripts": {
+    "agent": "tsx src/agent.ts",
+    "start": "node dist/agent.js",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "dev": "tsx src/agent.ts"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@langchain/core": "^1.1.48",
+    "@langchain/openrouter": "^0.3.0",
+    "dotenv": "^17.4.2",
+    "langchain": "^1.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "main": "dist/agent.js"
+}
